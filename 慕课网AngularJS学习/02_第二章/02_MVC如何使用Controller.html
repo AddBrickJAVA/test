@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="MyModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>2-2 MVC（2）——如何使用Controller (08:45)</title>
+    <script src="../lib/angular-1.4.4/angular.js"></script>
+    <script src="script/Javascript02.js"></script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        <input type="button" value="click me" ng-click="userWrite('user click')">
+        <label ng-bind="userRead"></label>
+    </div>
+</body>
+</html>
