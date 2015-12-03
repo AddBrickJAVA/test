@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="UserInforModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular-1.4.4/angular.js"></script>
+    <script src="script/Javascript05.js"></script>
+    <link rel="stylesheet" href="css/style05.css" type="text/css"/>
+</head>
+<body  ng-controller="UserInforCtrl">
+    <!--zen coding写法介绍 -->
+    <!-- E
+    元素名称(div, p) -->
+
+    <!-- E#id
+    使用id的元素(div#content, p#intro, span#error); -->
+
+    <!-- E.class
+    使用类的元素(div.header, p.error.critial). 你也可以联合使用class和idID: div#content.column.width; -->
+
+    <!-- E>N
+    子代元素(div>p, div#footer>p>span); -->
+
+    <!-- E+N
+    兄弟元素(h1+p, div#header+div#content+div#footer); -->
+
+    <!-- E*N
+    元素倍增(ul#nav>li*5>a); -->
+
+    <!-- E$*N
+    条目编号 (ul#nav>li.item-$*5); -->
+
+    <!-- zen coding介绍参考地址：https://www.qianduan.net/zen-coding-a-new-way-to-write-html-code/ -->
+    <form>
+        <div id="header">
+            这里是头部
+        </div>
+        <div id="content">
+            <div>
+                <lable id="email">邮箱：</lable>
+                <input type="email" placeholder="输入邮箱地址" ng-model="userInfo.email"/>
+            </div>
+            <div>
+                <lable id="password">密码：</lable>
+                <input type="password" placeholder="输入密码" ng-model="userInfo.password"/>
+            </div>
+            <div>
+                <input type="checkbox" style="margin-left: 55px;" ng-model="userInfo.autoLogin"/>自动登录
+            </div>
+        </div>
+        <div id="btnDIV">
+            <div>
+                <button id="getFormData" ng-click="getFormData()">获取表单数据</button>
+            </div>
+        </div>
+    </form>
+
+    <!--更换样式例子 1-->
+    <div class="style{{style}}">
+        这里是测试div {{style}}
+    </div>
+    <button id="setStyle" ng-click="setStyle()">修改样式</button>
+
+    <!--更换样式例子 2-->
+    <div ng-class="{style01:isStyle01,style02:isStyle02}">
+        这是ng-class测试
+    </div>
+    <button id="setStyle01" ng-click="setStyle01()">设置样式1</button>
+    <button id="setStyle02" ng-click="setStyle02()">设置样式2</button>
+
+    <!--更换样式例子 3 显示、隐藏效果-->
+    <div id="ngShowAndHide" class="style02" ng-show="isShow">
+        这里是ng-show ng-hide测试
+    </div>
+    <button id="setIsPanelShow" ng-click="setPanelShow()">设置层显示隐藏</button>
+
+
+    <!--动画效果 ngAnimate用法，CSS参考地址  css.doyoe.com
+    使用CSS3达成的动画，处理是由 AngularJS自动完成，我们只需要引用样式-->
+
+</body>
+</html>
